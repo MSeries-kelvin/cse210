@@ -26,7 +26,8 @@ public class Journal
                 string date = entry.GetDate();
                 string promptText = entry.GetPromptText();
                 string entryText = entry.GetEntryText();
-                string savableFormat = $"{date}~|~{promptText}~|~{entryText}";
+                string title = entry.GetTitle();
+                string savableFormat = $"{date}~|~{promptText}~|~{entryText}~|~{title}";
 
                 outputFile.WriteLine(savableFormat);
             }
@@ -46,8 +47,9 @@ public class Journal
             string date = parts[0];
             string promptText = parts[1];
             string entryText = parts[2];
+            string title = parts[3];
 
-            _entries.Add(new Entry(date, promptText, entryText));
+            _entries.Add(new Entry(date, promptText, entryText, title));
         }
 
     }

@@ -1,14 +1,17 @@
 using System;
 
+// Exceeding Requirement (Save other information in the journal entry): 
+// I added an option to enter a title for each Entry.
+
 class Program
 {
     static void Main(string[] args)
     {
-        string menu = "Please select one of the following choices\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit";
-        int option;
-
         Journal newJournal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
+
+        string menu = "Please select one of the following choices\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit";
+        int option;
 
         Console.WriteLine("Welcome to the Journal Program!");
         
@@ -23,13 +26,15 @@ class Program
                 string promptText = promptGenerator.GetRandomPrompt();
                 Console.WriteLine(promptText);
                 Console.Write(">");
-
                 string entryText = Console.ReadLine();
+
+                Console.Write("What would you like to name this entry? ");
+                string title = Console.ReadLine();
 
                 DateTime currentTime = DateTime.Now;
                 string dateText = currentTime.ToShortDateString();
 
-                Entry entry = new Entry(dateText, promptText, entryText);
+                Entry entry = new Entry(dateText, promptText, entryText, title);
 
                 newJournal.AddEntry(entry);
             }
