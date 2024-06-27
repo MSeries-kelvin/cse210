@@ -14,21 +14,33 @@ public class Word
     // Methods
     public void Hide()
     {
-
+        _isHidden = true;
     }
 
     public void Show()
     {
-
+        _isHidden = false;
     }
 
     public bool IsHidden()
     {
-        return true;
+        return _isHidden;
     }
 
     public string GetDisplayText()
     {
-        return "";
+        if (_isHidden)
+        {
+            string hiddenWord = "";
+
+            foreach (char i in _text)
+            {
+                hiddenWord += "_";
+            }
+
+            return hiddenWord;
+        }
+        
+        return _text;
     }
 }
