@@ -4,6 +4,11 @@ public class LogKeeper
 {
     private int _log;
 
+    public LogKeeper()
+    {
+        _log = 0;
+    }
+
     // method
     public void Add()
     {
@@ -15,6 +20,10 @@ public class LogKeeper
         if (_log > 0)
         {
             Console.WriteLine($"Congratulations you've performed {_log} activities");
+        }
+        else
+        {
+            Console.WriteLine($"You completed {_log} activities");
         }
     }
     
