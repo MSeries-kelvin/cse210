@@ -1,4 +1,4 @@
-public class Shape
+public abstract class Shape
 {
     private string _color;
 
@@ -9,10 +9,7 @@ public class Shape
     }
 
     // Methods
-    public virtual double GetArea()
-    {
-        return 0;
-    }
+    public abstract double GetArea();
 
     // Getter and setters
     public string GetColor()
