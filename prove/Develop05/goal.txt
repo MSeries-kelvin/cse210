@@ -1,0 +1,5 @@
+5000
+SimpleGoal:Give a talk~|~Talk to Oneluv about that very important thing~|~10~|~True
+EternalGoal:Study the Bible~|~Read the at least 2 chapters of the Bible daily~|~30
+ChecklistGoal:Run 3 times~|~Run my regular track at least 3 times~|~30~|~3~|~3~|~100
+SimpleGoal:You Know~|~You know about that thing na, the one we talked about?~|~10~|~True

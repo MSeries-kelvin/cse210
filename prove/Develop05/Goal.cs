@@ -21,10 +21,40 @@ public abstract class Goal
 
     public virtual string GetDetailsString()
     {
-        return "";
+        string checkBox = "[ ]";
+        
+        if (IsComplete())
+        {
+            checkBox = "[X]";
+        }
+
+        return $"{checkBox} {_shortName} ({_description})";
     }
 
     public abstract string GetStringRepresentation();
 
     // Getters and Setters
+    public string GetName()
+    {
+        return _shortName;
+    }
+
+    // public void SetName();
+
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    // public void SetDescription();
+
+    public int GetPoints()
+    {
+        return _points;
+    }
+
+    public void AddPoints(int points)
+    {
+        _points += points;
+    }
 }

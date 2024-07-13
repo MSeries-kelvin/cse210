@@ -1,3 +1,5 @@
+using System.Data.SqlTypes;
+
 public class SimpleGoal : Goal
 {
     private bool _isComplete;
@@ -11,17 +13,24 @@ public class SimpleGoal : Goal
     // Methods
     public override void RecordEvent()
     {
-        
+        _isComplete = true;
     }
 
     public override bool IsComplete()
     {
-        return false;
+        return _isComplete;
     }
 
     public override string GetStringRepresentation()
     {
-        return "";
+        // Create a saveable format here
+        // GoalType:{name}~|~{description}~|~{points}~|~{isComplete}
+        string name = GetName();
+        string description = GetDescription();
+        int points = GetPoints();
+        bool isComplete = IsComplete();
+
+        return $"SimpleGoal:{name}~|~{description}~|~{points}~|~{isComplete}";
     }
 
     // Getters and Setters

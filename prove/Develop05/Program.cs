@@ -1,10 +1,15 @@
+// Exceeding Requirements: I add a ProgressManager
+// class that keeps track of currentScore, then
+// used that to create a level uping system.
+
 using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Console.WriteLine("Hello Develop05 World!");
-        // Coming for ya... 
+        GoalManager goalManager = new GoalManager();
+        goalManager.Start();
     }
 }
+

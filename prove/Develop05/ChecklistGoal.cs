@@ -16,24 +16,57 @@ public class ChecklistGoal : Goal
     // Methods
     public override void RecordEvent()
     {
+        _amountCompleted++;
         
+        if(IsComplete())
+        {
+            AddPoints(_bonus);
+        }
     }
 
     public override bool IsComplete()
     {
-        // throw new NotImplementedException();
+        if (_amountCompleted >= _target)
+        {
+            return true;
+        }
+
         return false;
     }
 
     public override string GetDetailsString()
     {
-        return "";
+        string name = GetName();
+        string description = GetDescription();
+        string checkBox = "[ ]";
+        
+        if (IsComplete())
+        {
+            checkBox = "[X]";
+        }
+
+        return $"{checkBox} {name} ({description}) -- Currently completed: {_amountCompleted}/{_target}";
     }
 
     public override string GetStringRepresentation()
     {
-        return "";
+        // Create a saveable format here
+        string name = GetName();
+        string description = GetDescription();
+        int points = GetPoints();
+
+        return $"ChecklistGoal:{name}~|~{description}~|~{points}~|~{_amountCompleted}~|~{_target}~|~{_bonus}";
     }
 
     // Getters and Setters
+
+    public int GetBonus()
+    {
+        return _bonus;
+    }
+
+    public void SetAmountCompleted(int amountCompleted)
+    {
+        _amountCompleted = amountCompleted;
+    }
 }
