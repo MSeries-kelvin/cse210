@@ -1,0 +1,63 @@
+// Abstraction with YouTube Videos
+
+Video:
+    // Member Variables
+    title: string
+    author: string
+    length: int (seconds)
+    comments: List<Comment>
+
+    // Methods
+    numbersOfComments(): int
+
+Comment:
+    // Member Variables
+    name: string
+    text: string
+
+
+// Encapsulation with Online Ordering
+
+Product:
+    // Member Variables
+    name: string
+    productId: string
+    price: double
+    quantity: int
+
+    // Methods
+    
+
+Customer:
+    // Member Variables
+    name: string
+    address: Address
+
+    // Methods
+    livesInUSA(): boolen
+    
+
+Address:
+    // Member Variables
+    streetAddress: string
+    city: string
+    state: string
+    country: string
+
+    // Methods
+    livesInUSA(): boolen
+    getAddress(): string
+    
+
+Order:
+    // Member Variables
+    products: List<Product>
+    customer: Customer
+
+    // Methods
+    calculateCostOfOrder(): double
+    getPackagingLabel(): string
+    getShippingLabel(): string
+    
+
+// Inheritance with Event Planning
