@@ -145,12 +145,16 @@ Address:
 
 Activity:
     // Member Variables
+    _date: string
+    _length: int (minutes)
+
     // Construtors
+    Activity(date, length)
 
     // Methods
-    GetDistance(): double
-    GetSpeed(): double
-    GetPace(): double
+    GetDistance(): double (abstract)
+    GetSpeed(): double (abstract)
+    GetPace(): double (abstract)
     GetSummary(): string
 
     // Helper Functions
@@ -158,21 +162,45 @@ Activity:
 
 RunningActivity : Activity
     // Member Variables
+    _distance: double
+
     // Construtors
+    RunningActivity(date, length, distance)
+
     // Methods
+    GetDistance(): double (override)
+    GetSpeed(): double (override)
+    GetPace(): double (override)
+
     // Helper Functions
     // Getters and Setters
 
 CyclingActivity : Activity
     // Member Variables
+    _speed: double
+
     // Construtors
+    CyclingActivity(date, length, speed)
+    
     // Methods
+    GetDistance(): double (override)
+    GetSpeed(): double (override)
+    GetPace(): double (override)
+
     // Helper Functions
     // Getters and Setters
 
 SwimmingActivity : Activity
     // Member Variables
+    _numbersOfLaps: int
+
     // Construtors
+    SwimmingActivity(date, length, numbersOfLaps)
+
     // Methods
+    GetDistance(): double (override)
+    GetSpeed(): double (override)
+    GetPace(): double (override)
+
     // Helper Functions
     // Getters and Setters
