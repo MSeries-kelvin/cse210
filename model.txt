@@ -1,3 +1,5 @@
+// Member Variables
 // Construtors
 // Methods
+// Helper Functions
 // Getters and Setters

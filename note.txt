@@ -1,63 +1,178 @@
-// Abstraction with YouTube Videos
+//---------------------- Abstraction with YouTube Videos ----------------------------
 
 Video:
     // Member Variables
-    title: string
-    author: string
-    length: int (seconds)
-    comments: List<Comment>
+    _title: string
+    _author: string
+    _length: int (seconds)
+    _comments: List<Comment>
+
+    // Construtors
+    Video(title, author, length)
 
     // Methods
-    numbersOfComments(): int
+    NumbersOfComments(): int
 
 Comment:
     // Member Variables
-    name: string
-    text: string
+    _name: string
+    _text: string
 
 
-// Encapsulation with Online Ordering
+//---------------------- Encapsulation with Online Ordering --------------------------
 
 Product:
     // Member Variables
-    name: string
-    productId: string
-    price: double
-    quantity: int
+    _name: string
+    _productId: string
+    _price: double
+    _quantity: int
 
     // Methods
     
 
 Customer:
     // Member Variables
-    name: string
-    address: Address
+    _name: string
+    _address: Address
 
     // Methods
-    livesInUSA(): boolen
+    LivesInUSA(): bool
     
 
 Address:
     // Member Variables
-    streetAddress: string
-    city: string
-    state: string
-    country: string
+    _streetAddress: string
+    _city: string
+    _state: string
+    _country: string
 
     // Methods
-    livesInUSA(): boolen
-    getAddress(): string
+    LivesInUSA(): bool
+    GetAddress(): string
     
 
 Order:
     // Member Variables
-    products: List<Product>
-    customer: Customer
+    _products: List<Product>
+    _customer: Customer
 
     // Methods
-    calculateCostOfOrder(): double
-    getPackagingLabel(): string
-    getShippingLabel(): string
+    CalculateCostOfOrder(): double
+    GetPackagingLabel(): string
+    GetShippingLabel(): string
     
 
-// Inheritance with Event Planning
+//---------------------- Inheritance with Event Planning -----------------------
+
+Event:
+    // Member Variables
+    _title: string
+    _description: string
+    _date: string
+    _time: string
+    _address: Address
+
+    // Construtors
+    Event(title, description, date, time, address)
+
+    // Methods
+    GetStandardDetails(): string
+    GetShortDescription(): string
+
+    // Helper Functions
+    // Getters and Setters
+
+
+LectureEvent : Event
+    // Member Variables
+    _speakerName : string
+    _capacity: int
+
+    // Construtors
+    LectureEvent(title, description, date, time, address, speakerName, capacity)
+
+    // Methods
+    GetFullDetails(): string
+
+    // Helper Functions
+    // Getters and Setters
+
+
+ReceptionEvent : Event
+    // Member Variables
+    _email: string
+
+    // Construtors
+    ReceptionEvent(title, description, date, time, address, email)
+
+    // Methods
+    GetFullDetails(): string
+
+    // Helper Functions
+    // Getters and Setters
+
+
+OutdoorGatheringEvent : Event
+    // Member Variables
+    _weatherForecast: string
+
+    // Construtors
+    OutdoorGatheringEvent(title, description, date, time, address, weatherForecast)
+
+    // Methods
+    GetFullDetails(): string
+
+    // Helper Functions
+    // Getters and Setters
+
+
+Address:
+    // Member Variables
+    _streetAddress: string
+    _city: string
+    _state: string
+    _country: string
+
+    // Construtors
+    Address(streetAddress, city, state, country)
+
+    // Methods
+    getAddress(): string
+
+
+//---------------------- Polymorphism with Exercise Tracking ---------------------
+
+Activity:
+    // Member Variables
+    // Construtors
+
+    // Methods
+    GetDistance(): double
+    GetSpeed(): double
+    GetPace(): double
+    GetSummary(): string
+
+    // Helper Functions
+    // Getters and Setters
+
+RunningActivity : Activity
+    // Member Variables
+    // Construtors
+    // Methods
+    // Helper Functions
+    // Getters and Setters
+
+CyclingActivity : Activity
+    // Member Variables
+    // Construtors
+    // Methods
+    // Helper Functions
+    // Getters and Setters
+
+SwimmingActivity : Activity
+    // Member Variables
+    // Construtors
+    // Methods
+    // Helper Functions
+    // Getters and Setters
