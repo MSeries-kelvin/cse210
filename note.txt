@@ -138,7 +138,7 @@ Address:
     Address(streetAddress, city, state, country)
 
     // Methods
-    getAddress(): string
+    GetAddress(): string
 
 
 //---------------------- Polymorphism with Exercise Tracking ---------------------
